@@ -1,0 +1,14 @@
+<div class="relative w-full flex flex-col items-start gap-5">
+  <h1 class="text-3xl">Blog</h1>
+  
+  <p>
+    My personal blog where I share how-to's, tutorials or full-blown series about
+    a certain project, step-by-step.
+  </p>
+  
+  <p>You can also find about my new experiences and opinions around certain topics.</p>
+  
+  <div class="relative w-full flex flex-col divide-y divide-zinc-300">
+    <.post_card :for={post <- @posts} post={post} />
+  </div>
+</div>

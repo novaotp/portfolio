@@ -1,0 +1,10 @@
+{
+    "editor.tabSize": 2,
+    "emmet.includeLanguages": {
+        "html-eex": "html"
+    },
+    "tailwindCSS.includeLanguages": {
+        "phoenix-heex": "html",
+        "elixir": "html"
+    }
+}
