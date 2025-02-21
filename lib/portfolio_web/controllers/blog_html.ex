@@ -7,7 +7,7 @@ defmodule PortfolioWeb.BlogHTML do
     ~H"""
     <.link href={~p"/blog/#{@post.id}"} class="gap-2 flex flex-col items-start py-5">
       <.date post={@post} />
-      <h2 class="text-2xl">{@post.title}</h2>
+      <h2 class="text-xl lg:text-2xl">{@post.title}</h2>
       <p class="text-zinc-500 py-2">{@post.description}</p>
       <div class="flex flex-wrap gap-2">
         <span :for={tag <- @post.tags} class="bg-blue-700 text-white px-3 py-1 rounded-full text-sm">

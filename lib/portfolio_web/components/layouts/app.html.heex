@@ -1,26 +1,42 @@
-<header class="px-4 sm:px-6 lg:px-8">
-  <div class="flex items-center justify-between border-b border-zinc-100 py-3 text-sm">
-    <a href="/">
-      <img src={~p"/images/logo.svg"} width="36" />
-    </a>
-    <%!-- <div class="flex items-center gap-4 font-semibold leading-6 text-zinc-900">
-      <a href="https://twitter.com/elixirphoenix" class="hover:text-zinc-700">
-        @elixirphoenix
-      </a>
-      <a href="https://github.com/novaotp" class="hover:text-zinc-700">
-        GitHub
-      </a>
-      <a
-        href="https://hexdocs.pm/phoenix/overview.html"
-        class="rounded-lg bg-zinc-100 px-2 py-1 hover:bg-zinc-200/80"
-      >
-        Get Started <span aria-hidden="true">&rarr;</span>
-      </a>
-    </div> --%>
+<header class="relative flex items-center justify-between px-5 py-5 text-sm border-b sm:px-6 lg:px-8 border-zinc-200">
+  <a href={~p"/"}>
+    <img src={~p"/images/logo.svg"} width="36" />
+  </a>
+
+  <nav class="items-center hidden gap-2 px-5 text-base md:flex">
+    <a href={~p"/"} class="px-5 py-2">Home</a>
+    <a href={~p"/blog"} class="px-5 py-2">Blog</a>
+    <a href={~p"/contact"} class="px-5 py-2 text-white bg-indigo-700 rounded-lg">Contact Me</a>
+  </nav>
+
+  <div class="contents md:hidden">
+    <button phx-click={JS.show(to: "#mobile-nav")}>
+      <Heroicons.icon name="bars-2" type="outline" class="w-6" />
+    </button>
+    <aside
+      id="mobile-nav"
+      class="fixed top-0 left-0 z-10 flex-col items-start hidden w-full h-full gap-10 bg-white"
+    >
+      <header class="relative flex items-center justify-between px-5 py-5 text-sm border-b sm:px-6 lg:px-8 border-zinc-200">
+        <a href={~p"/"}>
+          <img src={~p"/images/logo.svg"} width="36" />
+        </a>
+        <button phx-click={JS.hide(to: "#mobile-nav")}>
+          <Heroicons.icon name="x-mark" type="outline" class="w-6" />
+        </button>
+      </header>
+      <nav class="flex flex-col gap-5 p-5">
+        <a href={~p"/"} class="text-xl">Home</a>
+        <a href={~p"/blog"} class="text-xl">Blog</a>
+        <a href={~p"/contact"} class="px-5 py-2 text-lg text-white bg-indigo-700 rounded-lg">
+          Contact Me
+        </a>
+      </nav>
+    </aside>
   </div>
 </header>
-<main class="px-5 py-5 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-2xl">
+<main class="px-5 py-5 sm:px-6 sm:py-8 lg:px-8">
+  <div class="max-w-2xl mx-auto">
     <.flash_group flash={@flash} />
     {@inner_content}
   </div>

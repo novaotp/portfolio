@@ -10,5 +10,7 @@ defmodule PortfolioWeb.Layouts do
   """
   use PortfolioWeb, :html
 
+  alias Phoenix.LiveView.JS
+
   embed_templates "layouts/*"
 end
