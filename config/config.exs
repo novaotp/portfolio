@@ -21,14 +21,10 @@ config :portfolio, PortfolioWeb.Endpoint,
   pubsub_server: Portfolio.PubSub,
   live_view: [signing_salt: "fvhAGk8g"]
 
-# Configures the mailer
-#
-# By default it uses the "Local" adapter which stores the emails
-# locally. You can see the emails in your browser, at "/dev/mailbox".
-#
-# For production it's recommended to configure a different adapter
-# at the `config/runtime.exs`.
-config :portfolio, Portfolio.Mailer, adapter: Swoosh.Adapters.Local
+config :portfolio, Portfolio.Mailer,
+  adapter: Swoosh.Adapters.Local,
+  name: System.get_env("CONTACT_NAME"),
+  email: System.get_env("CONTACT_EMAIL")
 
 # Configure esbuild (the version is required)
 config :esbuild,

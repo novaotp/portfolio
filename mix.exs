@@ -32,6 +32,8 @@ defmodule Portfolio.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:ecto, "~> 3.10"},
+      {:phoenix_ecto, "~> 4.0"},
       {:phoenix, "~> 1.7.19"},
       {:phoenix_html, "~> 4.1"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},

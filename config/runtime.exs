@@ -21,11 +21,6 @@ if System.get_env("PHX_SERVER") do
 end
 
 if config_env() == :prod do
-  # The secret key base is used to sign/encrypt cookies and other secrets.
-  # A default value is used in config/dev.exs and config/test.exs but you
-  # want to use a different value for prod and you most likely don't want
-  # to check this value into version control, so we use an environment
-  # variable instead.
   secret_key_base =
     System.get_env("SECRET_KEY_BASE") ||
       raise """
@@ -33,8 +28,8 @@ if config_env() == :prod do
       You can generate one by calling: mix phx.gen.secret
       """
 
-  host = System.get_env("PHX_HOST") || "example.com"
-  port = String.to_integer(System.get_env("PORT") || "4000")
+  host = System.get_env("PHX_HOST")
+  port = String.to_integer(System.get_env("PORT"))
 
   config :portfolio, :dns_cluster_query, System.get_env("DNS_CLUSTER_QUERY")
 
@@ -88,10 +83,30 @@ if config_env() == :prod do
   # Also, you may need to configure the Swoosh API client of your choice if you
   # are not using SMTP. Here is an example of the configuration:
   #
-  #     config :portfolio, Portfolio.Mailer,
-  #       adapter: Swoosh.Adapters.Mailgun,
-  #       api_key: System.get_env("MAILGUN_API_KEY"),
-  #       domain: System.get_env("MAILGUN_DOMAIN")
+
+  config :portfolio, Portfolio.Mailer,
+    adapter: Swoosh.Adapters.Sendgrid,
+    name: System.get_env("CONTACT_NAME"),
+    email: System.get_env("CONTACT_EMAIL"),
+    server:
+      System.get_env("SENDGRID_SERVER") ||
+        raise("""
+        environment variable SENDGRID_SERVER is missing.
+        You can find it in your SendGrid account.
+        """),
+    username:
+      System.get_env("SENDGRID_USERNAME") ||
+        raise("""
+        environment variable SENDGRID_USERNAME is missing.
+        You can find it in your SendGrid account.
+        """),
+    api_key:
+      System.get_env("SENDGRID_API_KEY") ||
+        raise("""
+        environment variable SENDGRID_API_KEY is missing.
+        You can generate from your SendGrid account.
+        """)
+
   #
   # For this example you need include a HTTP client required by Swoosh API client.
   # Swoosh supports Hackney and Finch out of the box:

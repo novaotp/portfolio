@@ -21,6 +21,8 @@ defmodule PortfolioWeb.Router do
 
     get "/blog", BlogController, :home
     get "/blog/:id", BlogController, :show
+
+    live "/contact", ContactLive
   end
 
   # Other scopes may use custom stacks.
