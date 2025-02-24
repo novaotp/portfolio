@@ -60,7 +60,8 @@ defmodule Portfolio.MixProject do
       {:bandit, "~> 1.5"},
       {:nimble_publisher, "~> 1.0"},
       {:makeup_elixir, ">= 0.0.0"},
-      {:makeup_erlang, ">= 0.0.0"}
+      {:makeup_erlang, ">= 0.0.0"},
+      {:makeup_syntect, "~> 0.1"}
     ]
   end
 

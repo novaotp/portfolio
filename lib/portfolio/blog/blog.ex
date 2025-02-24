@@ -12,6 +12,7 @@ defmodule Portfolio.Blog do
   use NimblePublisher,
     build: Blog.Post,
     parser: Blog.Parser,
+    html_converter: Blog.MarkdownConverter,
     from: Application.app_dir(:portfolio, "priv/posts/**/*.md"),
     as: :posts,
     earmark_options: [postprocessor: &Blog.Processor.process/1],
