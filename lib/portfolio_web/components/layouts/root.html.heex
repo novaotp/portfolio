@@ -11,10 +11,21 @@
     <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
     </script>
   </head>
-  <body class="relative w-full bg-white min-h-[100dvh] [&>div]:min-h-[100dvh]">
+  <body class="relative w-full bg-white min-h-[100dvh]">
     <script>
       0
     </script>
+    <.nav_bar conn={@conn} />
     {@inner_content}
+    <footer class="relative flex flex-col items-center justify-center w-full py-5">
+      <p>
+        {gettext("Written in")}
+        <a href="https://elixir-lang.org" class="font-medium text-indigo-700 underline">Elixir</a>
+        {gettext("and")}
+        <a href="https://v3.tailwindcss.com" class="font-medium text-indigo-700 underline">
+          TailwindCSS
+        </a>
+      </p>
+    </footer>
   </body>
 </html>

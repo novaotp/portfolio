@@ -1,0 +1,159 @@
+## "msgid"s in this file come from POT (.pot) files.
+###
+### Do not add, change, or remove "msgid"s manually here as
+### they're tied to the ones in the corresponding POT file
+### (with the same domain).
+###
+### Use "mix gettext.extract --merge" or "mix gettext.merge"
+### to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+
+#: lib/portfolio_web/components/core_components.ex:482
+#, elixir-autogen, elixir-format
+msgid "Actions"
+msgstr ""
+
+#: lib/portfolio_web/components/core_components.ex:160
+#, elixir-autogen, elixir-format
+msgid "Attempting to reconnect"
+msgstr ""
+
+#: lib/portfolio_web/components/core_components.ex:151
+#, elixir-autogen, elixir-format
+msgid "Error!"
+msgstr ""
+
+#: lib/portfolio_web/components/core_components.ex:172
+#, elixir-autogen, elixir-format
+msgid "Hang in there while we get back on track"
+msgstr ""
+
+#: lib/portfolio_web/components/core_components.ex:167
+#, elixir-autogen, elixir-format
+msgid "Something went wrong!"
+msgstr ""
+
+#: lib/portfolio_web/components/core_components.ex:150
+#, elixir-autogen, elixir-format
+msgid "Success!"
+msgstr ""
+
+#: lib/portfolio_web/components/core_components.ex:155
+#, elixir-autogen, elixir-format
+msgid "We can't find the internet"
+msgstr ""
+
+#: lib/portfolio_web/components/core_components.ex:76
+#: lib/portfolio_web/components/core_components.ex:130
+#, elixir-autogen, elixir-format
+msgid "close"
+msgstr ""
+
+#: lib/portfolio_web/live/contact_live.html.heex:5
+#, elixir-autogen, elixir-format
+msgid "Complete the form below to contact me."
+msgstr "Complète le formulaire ci-dessous pour me contacter."
+
+#: lib/portfolio_web/components/navbar.ex:14
+#: lib/portfolio_web/components/navbar.ex:62
+#: lib/portfolio_web/live/contact_live.html.heex:3
+#, elixir-autogen, elixir-format
+msgid "Contact"
+msgstr ""
+
+#: lib/portfolio_web/live/contact_live.html.heex:18
+#, elixir-autogen, elixir-format
+msgid "Email"
+msgstr ""
+
+#: lib/portfolio_web/live/contact_live.html.heex:20
+#, elixir-autogen, elixir-format
+msgid "Enter your email here..."
+msgstr "Entre ton email ici..."
+
+#: lib/portfolio_web/live/contact_live.html.heex:29
+#, elixir-autogen, elixir-format
+msgid "Enter your message here..."
+msgstr "Entre ton message ici..."
+
+#: lib/portfolio_web/live/contact_live.html.heex:13
+#, elixir-autogen, elixir-format
+msgid "Enter your name here..."
+msgstr "Entre ton nom ici..."
+
+#: lib/portfolio_web/live/contact_live.html.heex:27
+#, elixir-autogen, elixir-format
+msgid "Message"
+msgstr ""
+
+#: lib/portfolio_web/live/contact_live.html.heex:12
+#, elixir-autogen, elixir-format
+msgid "Name"
+msgstr "Nom"
+
+#: lib/portfolio_web/live/contact_live.html.heex:33
+#, elixir-autogen, elixir-format
+msgid "Send"
+msgstr "Envoyer"
+
+#: lib/portfolio_web/components/navbar.ex:13
+#: lib/portfolio_web/components/navbar.ex:60
+#: lib/portfolio_web/controllers/blog_html/home.html.heex:2
+#, elixir-autogen, elixir-format
+msgid "Blog"
+msgstr ""
+
+#: lib/portfolio_web/controllers/blog_html/home.html.heex:11
+#, elixir-autogen, elixir-format
+msgid "You can also find about my new experiences and opinions around certain topics."
+msgstr "Tu peux également voir mes nouvelles expériences et mes opinions sur certains sujets."
+
+#: lib/portfolio_web/controllers/blog_html/home.html.heex:5
+#, elixir-autogen, elixir-format, fuzzy
+msgid "My personal blog where I share how-to's, tutorials or full-blown series about a certain project, step-by-step."
+msgstr "Mon blog personnel où je partage des tutoriels or des séries complètes sur un certain projet, pas à pas."
+
+#: lib/portfolio_web/controllers/blog_html.ex:25
+#, elixir-autogen, elixir-format
+msgid "Last updated on"
+msgstr "Dernière mise à jour le"
+
+#: lib/portfolio_web/controllers/blog_html/show.html.heex:19
+#, elixir-autogen, elixir-format
+msgid "Latest posts"
+msgstr "Publications récentes"
+
+#: lib/portfolio_web/controllers/blog_html.ex:30
+#, elixir-autogen, elixir-format
+msgid "Published on"
+msgstr "Publié le"
+
+#: lib/portfolio_web/controllers/blog_html/show.html.heex:4
+#, elixir-autogen, elixir-format
+msgid "See other posts"
+msgstr "Voir d'autres publications"
+
+msgid "personal"
+msgstr "personnel"
+
+msgid "guide"
+msgstr ""
+
+#: lib/portfolio_web/components/layouts/root.html.heex:22
+#, elixir-autogen, elixir-format
+msgid "Written in"
+msgstr "Écrit en"
+
+#: lib/portfolio_web/components/layouts/root.html.heex:24
+#, elixir-autogen, elixir-format
+msgid "and"
+msgstr "et"
+
+#: lib/portfolio_web/components/navbar.ex:12
+#: lib/portfolio_web/components/navbar.ex:59
+#, elixir-autogen, elixir-format
+msgid "Home"
+msgstr ""

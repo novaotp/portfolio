@@ -1,51 +1,36 @@
 <div class="relative flex flex-col items-center justify-between w-full h-full gap-8">
   <div class="relative flex flex-col items-center justify-center w-full gap-8">
-    <h1 class="text-3xl text-center">Contact</h1>
+    <h1 class="text-3xl text-center">{gettext("Contact")}</h1>
     
-    <div class="relative flex flex-col items-center gap-5">
-      <p class="text-center min-[512px]:flex gap-1">
-        Send an email at
-        <a
-          href="mailto:contact@sajidur.dev?subject={$LL.contactPage.email.subject()}"
-          class="relative flex items-center justify-center gap-1 text-indigo-700 underline"
-        >
-          contact@sajidur.dev
-        </a>
-      </p>
-      
-      <span class={[
-        "relative w-full text-center",
-        "before:absolute before:left-0 before:top-1/2 before:h-px before:w-[40%] before:bg-black",
-        "after:absolute after:right-0 after:top-1/2 after:h-px after:w-[40%] after:bg-black"
-      ]}>
-        or
-      </span>
-      
-      <p class="text-center">Complete the form below to contact me.</p>
-    </div>
+    <p class="text-center">{gettext("Complete the form below to contact me.")}</p>
   </div>
   
   <.simple_form for={@form} phx-change="validate" phx-submit="send" class="w-full">
     <div class="relative flex flex-col w-full gap-5 md:flex-row">
-      <.input field={@form[:name]} label="Name" placeholder="Enter your name here..." required />
+      <.input
+        field={@form[:name]}
+        label={gettext("Name")}
+        placeholder={gettext("Enter your name here...")}
+        required
+      />
       <.input
         field={@form[:email]}
-        label="Email"
+        label={gettext("Email")}
         type="email"
-        placeholder="Enter your email here..."
+        placeholder={gettext("Enter your email here...")}
         required
       />
     </div>
     
     <.input
       field={@form[:message]}
-      label="Message"
+      label={gettext("Message")}
       type="textarea"
-      placeholder="Enter your message here..."
+      placeholder={gettext("Enter your message here...")}
       required
     />
     <:actions>
-      <.button>Send</.button>
+      <.button>{gettext("Send")}</.button>
     </:actions>
   </.simple_form>
 </div>

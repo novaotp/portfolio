@@ -8,10 +8,7 @@ defmodule PortfolioWeb.Router do
     plug :put_root_layout, html: {PortfolioWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-  end
-
-  pipeline :api do
-    plug :accepts, ["json"]
+    plug PortfolioWeb.Plugs.Locale, "en"
   end
 
   scope "/", PortfolioWeb do
@@ -22,13 +19,16 @@ defmodule PortfolioWeb.Router do
     get "/blog", BlogController, :home
     get "/blog/:id", BlogController, :show
 
-    live "/contact", ContactLive
+    post "/locale", LocaleController, :update
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", PortfolioWeb do
-  #   pipe_through :api
-  # end
+  live_session :default, on_mount: PortfolioWeb.Hooks.Locale do
+    scope "/", PortfolioWeb do
+      pipe_through :browser
+
+      live "/contact", ContactLive
+    end
+  end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:portfolio, :dev_routes) do

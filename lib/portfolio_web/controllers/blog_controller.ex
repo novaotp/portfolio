@@ -6,17 +6,18 @@ defmodule PortfolioWeb.BlogController do
   def home(conn, _params) do
     posts =
       if tag = conn.query_params["tag"] do
-        Blog.get_posts_by_tag!(tag)
+        Blog.get_posts_by_tag!(Gettext.get_locale(PortfolioWeb.Gettext), tag)
       else
-        Blog.all_posts()
+        Blog.all_posts(Gettext.get_locale(PortfolioWeb.Gettext))
       end
 
-    render(conn, :home, posts: posts)
+    conn
+    |> render(:home, page_title: "Blog", posts: posts)
   end
 
   def show(conn, %{"id" => id}) do
-    post = Blog.get_post_by_id!(id)
-    latest_posts = Blog.latest_posts(id)
+    post = Blog.get_post_by_id!(Gettext.get_locale(PortfolioWeb.Gettext), id)
+    latest_posts = Blog.latest_posts(Gettext.get_locale(PortfolioWeb.Gettext), id)
 
     conn
     |> render(

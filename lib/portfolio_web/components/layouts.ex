@@ -10,7 +10,7 @@ defmodule PortfolioWeb.Layouts do
   """
   use PortfolioWeb, :html
 
-  alias Phoenix.LiveView.JS
+  import PortfolioWeb.Components.NavBar
 
   embed_templates "layouts/*"
 end
