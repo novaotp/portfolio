@@ -59,6 +59,7 @@ msgstr ""
 
 #: lib/portfolio_web/components/navbar.ex:14
 #: lib/portfolio_web/components/navbar.ex:62
+#: lib/portfolio_web/live/contact_live.ex:76
 #: lib/portfolio_web/live/contact_live.html.heex:3
 #, elixir-autogen, elixir-format
 msgid "Contact"
@@ -156,4 +157,34 @@ msgstr ""
 #: lib/portfolio_web/components/navbar.ex:59
 #, elixir-autogen, elixir-format
 msgid "Home"
+msgstr ""
+
+#: lib/portfolio_web/controllers/page_html/home.html.heex:59
+#, elixir-autogen, elixir-format
+msgid "About Me"
+msgstr ""
+
+#: lib/portfolio_web/controllers/page_html/home.html.heex:7
+#, elixir-autogen, elixir-format
+msgid "Find me on"
+msgstr ""
+
+#: lib/portfolio_web/controllers/page_html/home.html.heex:61
+#, elixir-autogen, elixir-format
+msgid "I'm a software developer student, currently studying at the EPTM of Sion, Switzerland."
+msgstr ""
+
+#: lib/portfolio_web/controllers/page_html/home.html.heex:66
+#, elixir-autogen, elixir-format
+msgid "In my free time, I like to cook and draw. I'm also keen on programming and OSS."
+msgstr ""
+
+#: lib/portfolio_web/controllers/page_html/home.html.heex:5
+#, elixir-autogen, elixir-format
+msgid "Passionnate about building accessible and performant web applications."
+msgstr ""
+
+#: lib/portfolio_web/controllers/page_html/home.html.heex:4
+#, elixir-autogen, elixir-format
+msgid "Software developer student"
 msgstr ""

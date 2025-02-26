@@ -73,6 +73,7 @@ defmodule PortfolioWeb.ContactLive do
       socket
       |> assign(:init, changeset)
       |> assign(:form, changeset |> to_form())
+      |> assign(:page_title, gettext("Contact"))
 
     {:ok, socket}
   end
