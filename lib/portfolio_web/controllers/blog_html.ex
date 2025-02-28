@@ -9,10 +9,13 @@ defmodule PortfolioWeb.BlogHTML do
     ~H"""
     <.link href={~p"/blog/#{@post.id}"} class="gap-2 flex flex-col items-start py-5">
       <.date post={@post} />
-      <h2 class="text-xl lg:text-2xl">{@post.title}</h2>
-      <p class="text-zinc-500 py-2">{@post.description}</p>
+      <h2 class="text-xl dark:text-zinc-100">{@post.title}</h2>
+      <p class="text-zinc-500 dark:text-zinc-400 py-2">{@post.description}</p>
       <div class="flex flex-wrap gap-2">
-        <span :for={tag <- @post.tags} class="bg-blue-700 text-white px-3 py-1 rounded-full text-sm">
+        <span
+          :for={tag <- @post.tags}
+          class="bg-indigo-700 dark:bg-indigo-300 dark:text-zinc-800 text-white px-3 py-1 rounded-full text-sm"
+        >
           {Gettext.gettext(PortfolioWeb.Gettext, tag)}
         </span>
       </div>
@@ -22,7 +25,7 @@ defmodule PortfolioWeb.BlogHTML do
 
   def date(assigns) do
     ~H"""
-    <time class="text-sm text-zinc-500">
+    <time class="text-sm text-zinc-500 dark:text-zinc-400">
       <%= if @post.updated_at do %>
         {gettext("Last updated on")} {format_date(
           Gettext.get_locale(PortfolioWeb.Gettext),

@@ -20,18 +20,30 @@
     transition: transform .05s linear;
   }
 
+  html.dark #sidebar a {
+    color: rgb(161 161 170);
+  }
+
   #sidebar a.active {
     color: rgb(67 56 202);
     font-weight: 500;
     transform: translateX(2.5rem);
   }
+
+  html.dark #sidebar a.active {
+    color: rgb(165 180 252);
+  }
 </style>
 
 <div class="relative flex flex-col w-full gap-20 pt-5 lg:flex-row lg:items-start">
   <div class="relative lg:sticky flex flex-col items-start w-full gap-5 lg:top-[85px] lg:w-[47%]">
-    <h1 class="text-4xl font-semibold">Sajidur Rahman</h1>
-    <h2 class="text-xl font-medium">{gettext("Software developer student")}</h2>
-    <p>{gettext("Passionnate about building accessible and performant web applications.")}</p>
+    <h1 class="text-4xl font-semibold dark:text-zinc-100">Sajidur Rahman</h1>
+    <h2 class="text-xl font-medium dark:text-zinc-100">
+      {gettext("Software developer student")}
+    </h2>
+    <p class="dark:text-zinc-100">
+      {gettext("Passionnate about building accessible and performant web applications.")}
+    </p>
     <div id="sidebar" class="flex-col items-start hidden gap-5 mt-10 lg:flex">
       <a href="#about-me">
         {gettext("About Me")}
@@ -39,7 +51,7 @@
       <a href="#experience">{gettext("Experience")}</a>
       <a href="#projects">{gettext("Projects")}</a>
     </div>
-    <div class="relative flex flex-wrap w-full gap-5 lg:mt-10">
+    <div class="relative flex flex-wrap w-full gap-5 lg:mt-10 dark:text-zinc-100">
       {gettext("Find me on")}
       <a
         href="https://github.com/novaotp"
@@ -93,20 +105,20 @@
   </div>
   <div id="content" class="relative flex flex-col w-full gap-20 lg:w-[53%]">
     <section id="about-me" class="relative flex flex-col w-full gap-5 scroll-mt-10">
-      <h2 class="mb-5 text-lg font-medium">{gettext("About Me")}</h2>
-      <p>
+      <h2 class="mb-5 text-lg font-medium dark:text-zinc-100">{gettext("About Me")}</h2>
+      <p class="dark:text-zinc-100">
         {gettext(
           "I'm a software developer student, currently studying at the EPTM of Sion, Switzerland."
         )}
       </p>
-      <p>
+      <p class="dark:text-zinc-100">
         {gettext(
           "In my free time, I like to cook and draw. I'm also keen on programming and OSS."
         )}
       </p>
     </section>
     <section id="experience" class="relative flex flex-col w-full gap-4 scroll-mt-10">
-      <h2 class="mb-5 text-lg font-medium">
+      <h2 class="mb-5 text-lg font-medium dark:text-zinc-100">
         {gettext("Experience")}
       </h2>
       <.experience_card
@@ -136,11 +148,11 @@
         </:description>
         <:extra>
           <ul class="ml-5 list-disc">
-            <li>
+            <li class="dark:marker:text-zinc-100">
               <a
                 href="https://github.com/novaotp/iris-energy-widget"
                 target="_blank"
-                class="text-sm text-indigo-700 underline"
+                class="text-sm text-indigo-700 underline dark:text-indigo-300"
                 title="See the widget's github repository (new page)"
               >
                 ThingsBoard Widget for real-time energy consumption
@@ -151,7 +163,7 @@
       </.experience_card>
     </section>
     <section id="projects" class="relative flex flex-col w-full gap-4 scroll-mt-10">
-      <h2 class="mb-5 text-lg font-medium">
+      <h2 class="mb-5 text-lg font-medium dark:text-zinc-100">
         {gettext("Projects")}
       </h2>
       <.project_card
@@ -164,6 +176,19 @@
         <:description>
           {gettext(
             "A collection of Svelte 5 utilities, powered by runes. It provides a wide range of utilities for handling states, reactive bindings, and much more. It features interactive demos in the documentation."
+          )}
+        </:description>
+      </.project_card>
+      <.project_card
+        href="https://github.com/novaotp/portfolio"
+        tags={~w(Elixir Phoenix TailwindCSS)}
+        image_path={~p"/images/portfolio.png"}
+        image_alt="My portfolio's home page."
+      >
+        Portfolio
+        <:description>
+          {gettext(
+            "My personal portfolio written in Elixir, showcasing my work. It features a file-based markdown blog and is multilingual."
           )}
         </:description>
       </.project_card>

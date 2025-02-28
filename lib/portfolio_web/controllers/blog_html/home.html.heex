@@ -1,17 +1,17 @@
-<div class="relative flex flex-col items-start w-full gap-5 md:gap-8 max-w-2xl">
-  <h1 class="mx-auto text-3xl">{gettext("Blog")}</h1>
+<div class="relative flex flex-col items-start w-full max-w-2xl gap-5 md:gap-8">
+  <h1 class="mx-auto text-3xl dark:text-zinc-100">{gettext("Blog")}</h1>
   
-  <p>
+  <p class="dark:text-zinc-100">
     {gettext(
       "My personal blog where I share how-to's, tutorials or full-blown series about a certain project, step-by-step."
     )}
   </p>
   
-  <p>
+  <p class="dark:text-zinc-100">
     {gettext("You can also find about my new experiences and opinions around certain topics.")}
   </p>
   
-  <div class="relative flex flex-col w-full divide-y divide-zinc-300">
+  <div class="relative flex flex-col w-full divide-y divide-zinc-300 dark:divide-zinc-600">
     <.post_card :for={post <- @posts} post={post} />
   </div>
 </div>

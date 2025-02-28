@@ -11,7 +11,7 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n>1);\n"
 
-#: lib/portfolio_web/components/core_components.ex:482
+#: lib/portfolio_web/components/core_components.ex:483
 #, elixir-autogen, elixir-format
 msgid "Actions"
 msgstr ""
@@ -57,8 +57,8 @@ msgstr ""
 msgid "Complete the form below to contact me."
 msgstr "Complète le formulaire ci-dessous pour me contacter."
 
-#: lib/portfolio_web/components/navbar.ex:30
-#: lib/portfolio_web/components/navbar.ex:79
+#: lib/portfolio_web/components/navbar.ex:48
+#: lib/portfolio_web/components/navbar.ex:107
 #: lib/portfolio_web/live/contact_live.ex:76
 #: lib/portfolio_web/live/contact_live.html.heex:3
 #, elixir-autogen, elixir-format
@@ -100,8 +100,8 @@ msgstr "Nom"
 msgid "Send"
 msgstr "Envoyer"
 
-#: lib/portfolio_web/components/navbar.ex:23
-#: lib/portfolio_web/components/navbar.ex:77
+#: lib/portfolio_web/components/navbar.ex:35
+#: lib/portfolio_web/components/navbar.ex:105
 #: lib/portfolio_web/controllers/blog_html/home.html.heex:2
 #, elixir-autogen, elixir-format
 msgid "Blog"
@@ -117,7 +117,7 @@ msgstr "Tu peux également voir mes nouvelles expériences et mes opinions sur c
 msgid "My personal blog where I share how-to's, tutorials or full-blown series about a certain project, step-by-step."
 msgstr "Mon blog personnel où je partage des tutoriels or des séries complètes sur un certain projet, pas à pas."
 
-#: lib/portfolio_web/controllers/blog_html.ex:27
+#: lib/portfolio_web/controllers/blog_html.ex:30
 #, elixir-autogen, elixir-format
 msgid "Last updated on"
 msgstr "Dernière mise à jour le"
@@ -127,7 +127,7 @@ msgstr "Dernière mise à jour le"
 msgid "Latest posts"
 msgstr "Publications récentes"
 
-#: lib/portfolio_web/controllers/blog_html.ex:32
+#: lib/portfolio_web/controllers/blog_html.ex:35
 #, elixir-autogen, elixir-format
 msgid "Published on"
 msgstr "Publié le"
@@ -143,86 +143,96 @@ msgstr "personnel"
 msgid "guide"
 msgstr ""
 
-#: lib/portfolio_web/components/layouts/root.html.heex:22
+#: lib/portfolio_web/components/layouts/root.html.heex:31
 #, elixir-autogen, elixir-format
 msgid "Written in"
 msgstr "Écrit en"
 
-#: lib/portfolio_web/components/layouts/root.html.heex:24
+#: lib/portfolio_web/components/layouts/root.html.heex:38
 #, elixir-autogen, elixir-format
 msgid "and"
 msgstr "et"
 
-#: lib/portfolio_web/components/navbar.ex:16
-#: lib/portfolio_web/components/navbar.ex:76
+#: lib/portfolio_web/components/navbar.ex:22
+#: lib/portfolio_web/components/navbar.ex:104
 #, elixir-autogen, elixir-format
 msgid "Home"
 msgstr ""
 
-#: lib/portfolio_web/controllers/page_html/home.html.heex:37
-#: lib/portfolio_web/controllers/page_html/home.html.heex:96
+#: lib/portfolio_web/controllers/page_html/home.html.heex:49
+#: lib/portfolio_web/controllers/page_html/home.html.heex:108
 #, elixir-autogen, elixir-format
 msgid "About Me"
 msgstr "À propos de moi"
 
-#: lib/portfolio_web/controllers/page_html/home.html.heex:43
+#: lib/portfolio_web/controllers/page_html/home.html.heex:55
 #, elixir-autogen, elixir-format
 msgid "Find me on"
 msgstr "Trouve moi sur"
 
-#: lib/portfolio_web/controllers/page_html/home.html.heex:98
+#: lib/portfolio_web/controllers/page_html/home.html.heex:110
 #, elixir-autogen, elixir-format
 msgid "I'm a software developer student, currently studying at the EPTM of Sion, Switzerland."
 msgstr "Je suis un étudiant en tant que développeur d'applications, actuellement à l'EPTM de Sion en Suisse."
 
-#: lib/portfolio_web/controllers/page_html/home.html.heex:103
+#: lib/portfolio_web/controllers/page_html/home.html.heex:115
 #, elixir-autogen, elixir-format
 msgid "In my free time, I like to cook and draw. I'm also keen on programming and OSS."
 msgstr "Dans mon temps libre, j'aime cuisiner et dessiner. De plus, je suis passionné de programmation et des logiciels open-source."
 
-#: lib/portfolio_web/controllers/page_html/home.html.heex:34
+#: lib/portfolio_web/controllers/page_html/home.html.heex:45
 #, elixir-autogen, elixir-format
 msgid "Passionnate about building accessible and performant web applications."
 msgstr "Passionné par la création d'applications web accessibles et performantes."
 
-#: lib/portfolio_web/controllers/page_html/home.html.heex:33
+#: lib/portfolio_web/controllers/page_html/home.html.heex:42
 #, elixir-autogen, elixir-format
 msgid "Software developer student"
 msgstr "Étudiant en développement d'applications"
 
-#: lib/portfolio_web/controllers/page_html/home.html.heex:120
+#: lib/portfolio_web/controllers/page_html/home.html.heex:132
 #, elixir-autogen, elixir-format
 msgid "Created, tested and deployed a CI pipeline to deliver new releases easily. Worked on unit testing to ensure proper functioning of the source code. Helped developing ergonomic and responsive UI layouts and components."
 msgstr "Création, test et déploiement d'un pipeline CI pour livrer facilement les nouvelles versions. Travail sur les tests unitaires pour assurer le bon fonctionnement du code source. Aide au développement d'interfaces utilisateur et de composants ergonomiques et réactifs."
 
-#: lib/portfolio_web/controllers/page_html/home.html.heex:39
-#: lib/portfolio_web/controllers/page_html/home.html.heex:110
+#: lib/portfolio_web/controllers/page_html/home.html.heex:51
+#: lib/portfolio_web/controllers/page_html/home.html.heex:122
 #, elixir-autogen, elixir-format
 msgid "Experience"
 msgstr "Expérience"
 
-#: lib/portfolio_web/controllers/page_html/home.html.heex:118
+#: lib/portfolio_web/controllers/page_html/home.html.heex:130
 #, elixir-autogen, elixir-format
 msgid "Internship - Avaulo SA"
 msgstr "Stage - Avaulo SA"
 
-#: lib/portfolio_web/controllers/page_html/home.html.heex:133
+#: lib/portfolio_web/controllers/page_html/home.html.heex:145
 #, elixir-autogen, elixir-format
 msgid "Creation of supervisions dedicated to the building team's activities. Display of real-time values acquired from LoRa sensors. Compilation of generic, usable documentation for IRIS digital platforms. Scripting and automation of mass data capture. Development of Angular widgets for the Thingsboard platform in coordination with external partners."
 msgstr "Création de supervisions dédiés aux activités de l'équipe du bâtiment. Affichage de valeurs en temps réel acquises depuis des senseurs LoRa. Compilation d'une documentation générique et exploitable pour les plateformes numériques IRIS. Création de scripts et automatisation de saisie d'informations de masse. Développement de widgets en Angular pour la plateforme Thingsboard en coordination avec des partenaires externes."
 
-#: lib/portfolio_web/controllers/page_html/home.html.heex:131
+#: lib/portfolio_web/controllers/page_html/home.html.heex:143
 #, elixir-autogen, elixir-format
 msgid "Summer Job - Altis"
 msgstr "Job d'été - Altis"
 
-#: lib/portfolio_web/controllers/page_html/home.html.heex:40
-#: lib/portfolio_web/controllers/page_html/home.html.heex:155
+#: lib/portfolio_web/controllers/page_html/home.html.heex:52
+#: lib/portfolio_web/controllers/page_html/home.html.heex:167
 #, elixir-autogen, elixir-format
 msgid "Projects"
 msgstr "Projets"
 
-#: lib/portfolio_web/controllers/page_html/home.html.heex:165
+#: lib/portfolio_web/controllers/page_html/home.html.heex:177
 #, elixir-autogen, elixir-format, fuzzy
 msgid "A collection of Svelte 5 utilities, powered by runes. It provides a wide range of utilities for handling states, reactive bindings, and much more. It features interactive demos in the documentation."
 msgstr "Une collection d'utilitaires Svelte 5, alimentés par les runes. Il fournit une large gamme d'utilitaires pour gérer les états, les liaisons réactives, et bien plus encore. La documentation contient également des démonstrations interactives."
+
+#: lib/portfolio_web/components/navbar.ex:113
+#, elixir-autogen, elixir-format
+msgid "Locale"
+msgstr "Langage"
+
+#: lib/portfolio_web/components/navbar.ex:139
+#, elixir-autogen, elixir-format
+msgid "Theme"
+msgstr "Thème"

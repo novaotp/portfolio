@@ -29,7 +29,7 @@ defmodule PortfolioWeb.PageHTML do
       <time class="text-zinc-400 text-sm font-medium">
         {format_periods(@periods, @show_months)}
       </time>
-      <h3 class="font-medium">
+      <h3 class="font-medium dark:text-zinc-100">
         <a
           href={@href}
           target="_blank"
@@ -40,12 +40,15 @@ defmodule PortfolioWeb.PageHTML do
           <Heroicons.icon name="arrow-up-right" type="mini" class="size-5" />
         </a>
       </h3>
-      <p class="text-sm text-zinc-600">{render_slot(@description)}</p>
+      <p class="text-sm text-zinc-600 dark:text-zinc-400">{render_slot(@description)}</p>
       <%= for extra <- @extra do %>
         {render_slot(extra)}
       <% end %>
       <div class="flex flex-wrap gap-2 mt-2">
-        <span :for={tag <- @tags} class="bg-indigo-700 py-1 px-3 text-sm rounded-full text-white">
+        <span
+          :for={tag <- @tags}
+          class="bg-indigo-700 dark:bg-indigo-300 py-1 px-3 text-sm rounded-full text-white dark:text-zinc-800"
+        >
           {tag}
         </span>
       </div>
@@ -90,7 +93,7 @@ defmodule PortfolioWeb.PageHTML do
         class="w-[200px] sm:w-auto sm:max-h-20 aspect-video rounded-md"
       />
       <div class="flex flex-col gap-2">
-        <h3 class="font-medium">
+        <h3 class="font-medium dark:text-zinc-100">
           <a
             href={@href}
             target="_blank"
@@ -101,9 +104,12 @@ defmodule PortfolioWeb.PageHTML do
             <Heroicons.icon name="arrow-up-right" type="mini" class="size-5" />
           </a>
         </h3>
-        <p class="text-sm text-zinc-600">{render_slot(@description)}</p>
+        <p class="text-sm text-zinc-400">{render_slot(@description)}</p>
         <div class="flex flex-wrap gap-2 mt-2">
-          <span :for={tag <- @tags} class="bg-indigo-700 py-1 px-3 text-sm rounded-full text-white">
+          <span
+            :for={tag <- @tags}
+            class="bg-indigo-700 dark:bg-indigo-300 py-1 px-3 text-sm rounded-full text-white dark:text-zinc-800"
+          >
             {tag}
           </span>
         </div>

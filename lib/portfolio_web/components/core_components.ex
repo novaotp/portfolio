@@ -202,7 +202,7 @@ defmodule PortfolioWeb.CoreComponents do
   def simple_form(assigns) do
     ~H"""
     <.form :let={f} for={@for} as={@as} {@rest}>
-      <div class="w-full space-y-5 bg-white">
+      <div class="w-full space-y-5">
         {render_slot(@inner_block, f)}
         <div :for={action <- @actions} class="flex items-center justify-center gap-6 mt-2">
           {render_slot(action, f)}
@@ -231,8 +231,8 @@ defmodule PortfolioWeb.CoreComponents do
     <button
       type={@type}
       class={[
-        "phx-submit-loading:opacity-75 rounded-lg bg-indigo-700 hover:bg-indigo-600 focus:ring-2 focus:ring-offset-2 py-3 px-5",
-        "leading-6 text-white active:text-white/80 duration-150",
+        "phx-submit-loading:opacity-75 rounded-lg bg-indigo-700 hover:bg-indigo-600 dark:bg-indigo-300 dark:hover:bg-indigo-400 focus:ring-2 focus:ring-offset-2 py-2.5 px-5",
+        "leading-6 text-white dark:text-zinc-800 active:text-white/80 dark:active:text-zinc-800/80 duration-150",
         @class
       ]}
       {@rest}
@@ -355,8 +355,8 @@ defmodule PortfolioWeb.CoreComponents do
         id={@id}
         name={@name}
         class={[
-          "p-5 text-sm block w-full rounded-lg text-zinc-900 focus:ring-2 focus:ring-offset-2 sm:leading-6 min-h-[200px]",
-          @errors == [] && "border-zinc-300 focus:border-indigo-400",
+          "p-5 text-sm block w-full rounded-lg text-zinc-900 dark:text-zinc-100 dark:bg-zinc-800 focus:ring-2 focus:ring-offset-2 sm:leading-6 min-h-[200px]",
+          @errors == [] && "border-zinc-300 dark:border-zinc-700 focus:border-indigo-400",
           @errors != [] && "border-red-400 focus:border-red-400"
         ]}
         {@rest}
@@ -377,8 +377,9 @@ defmodule PortfolioWeb.CoreComponents do
         id={@id}
         value={Phoenix.HTML.Form.normalize_value(@type, @value)}
         class={[
-          "w-full px-5 py-3 rounded-lg text-sm text-zinc-900 focus:ring-2 focus:ring-offset-2 sm:text-sm sm:leading-6",
-          @errors == [] && "border-zinc-300 focus:border-indigo-400",
+          "w-full px-5 py-3 rounded-lg text-sm text-zinc-900 dark:bg-zinc-800 focus:ring-2 focus:ring-offset-2 sm:text-sm sm:leading-6",
+          @errors == [] &&
+            "border-zinc-300 dark:border-zinc-700 focus:border-indigo-400 dark:focus:border-indigo-600",
           @errors != [] && "border-red-400 focus:border-red-400"
         ]}
         {@rest}
@@ -396,7 +397,7 @@ defmodule PortfolioWeb.CoreComponents do
 
   def label(assigns) do
     ~H"""
-    <label for={@for} class="block leading-6 text-zinc-800">
+    <label for={@for} class="block leading-6 text-zinc-800 dark:text-zinc-100">
       {render_slot(@inner_block)}
     </label>
     """

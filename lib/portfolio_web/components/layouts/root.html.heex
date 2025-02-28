@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="[scrollbar-gutter:stable]">
+<html lang={@conn.assigns.locale} class="[scrollbar-gutter:stable]">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,19 +10,36 @@
     <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
     <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
     </script>
+    <script>
+      if (localStorage.theme === 'dark' ||
+          (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
   </head>
-  <body class="relative w-full bg-white min-h-[100dvh]">
+  <body class="relative w-full bg-white dark:bg-zinc-800 min-h-[100dvh]">
     <script>
       0
     </script>
     <.nav_bar conn={@conn} />
     {@inner_content}
-    <footer class="relative flex flex-col items-center justify-center w-full py-5">
+    <footer class="relative flex flex-col items-center justify-center w-full py-5 dark:text-zinc-100">
       <p>
         {gettext("Written in")}
-        <a href="https://elixir-lang.org" class="font-medium text-indigo-700 underline">Elixir</a>
+        <a
+          href="https://elixir-lang.org"
+          class="font-medium text-indigo-700 underline dark:text-indigo-300"
+        >
+          Elixir
+        </a>
         {gettext("and")}
-        <a href="https://v3.tailwindcss.com" class="font-medium text-indigo-700 underline">
+        <a
+          href="https://v3.tailwindcss.com"
+          class="font-medium text-indigo-700 underline dark:text-indigo-300"
+        >
           TailwindCSS
         </a>
       </p>
