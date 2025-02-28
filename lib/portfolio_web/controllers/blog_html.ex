@@ -1,6 +1,8 @@
 defmodule PortfolioWeb.BlogHTML do
   use PortfolioWeb, :html
 
+  alias PortfolioWeb.Constants
+
   embed_templates "blog_html/*"
 
   def post_card(assigns) do
@@ -35,13 +37,7 @@ defmodule PortfolioWeb.BlogHTML do
 
   defp format_date(locale, date) do
     if locale == "fr" do
-      Calendar.strftime(date, "%d %B %Y",
-        month_names: fn month ->
-          {"Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre",
-           "Octobre", "Novembre", "Décembre"}
-          |> elem(month - 1)
-        end
-      )
+      Calendar.strftime(date, "%d %B %Y", month_names: &Constants.localized_month/1)
     else
       Calendar.strftime(date, "%B %d, %Y")
     end

@@ -9,9 +9,41 @@ defmodule PortfolioWeb.Components.NavBar do
       </a>
       
       <nav class="items-center hidden gap-2 px-5 text-base md:flex">
-        <a href={~p"/"} class="px-5 py-2">{gettext("Home")}</a>
-        <a href={~p"/blog"} class="px-5 py-2">{gettext("Blog")}</a>
-        <a href={~p"/contact"} class="px-5 py-2">{gettext("Contact")}</a>
+        <a
+          href={~p"/"}
+          class={[
+            "px-5 py-2",
+            if(@conn.request_path == "/", do: "text-indigo-700 font-medium", else: "text-zinc-600")
+          ]}
+        >
+          {gettext("Home")}
+        </a>
+        
+        <a
+          href={~p"/blog"}
+          class={[
+            "px-5 py-2",
+            if(@conn.request_path == "/blog",
+              do: "text-indigo-700 font-medium",
+              else: "text-zinc-600"
+            )
+          ]}
+        >
+          {gettext("Blog")}
+        </a>
+        
+        <a
+          href={~p"/contact"}
+          class={[
+            "px-5 py-2",
+            if(@conn.request_path == "/contact",
+              do: "text-indigo-700 font-medium",
+              else: "text-zinc-600"
+            )
+          ]}
+        >
+          {gettext("Contact")}
+        </a>
       </nav>
       
       <div class="flex items-center gap-5">
@@ -28,7 +60,10 @@ defmodule PortfolioWeb.Components.NavBar do
             type="submit"
             class={[
               "uppercase font-medium",
-              Gettext.get_locale(PortfolioWeb.Gettext) == locale && "text-indigo-700"
+              if(Gettext.get_locale(PortfolioWeb.Gettext) == locale,
+                do: "text-indigo-700",
+                else: "text-zinc-600"
+              )
             ]}
           >
             {locale}

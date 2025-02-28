@@ -1,9 +1,45 @@
-<div class="relative w-full flex flex-col gap-20">
-  <section class="relative w-full flex flex-col gap-5 items-start">
+<script
+  defer
+  src="https://cdnjs.cloudflare.com/ajax/libs/simple-scrollspy/2.4.1/simple-scrollspy.min.js"
+  integrity="sha512-NNb5TgmE+7PHedvAWwPKZ/ukCGJciTHZ23ghPriEeEfcGySDBm9zIrjaXp/WNAUcVYhi5XhJ1rHveDKR35CInw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+>
+</script>
+<script defer>
+  window.onload = function () {
+    scrollSpy("#sidebar", {
+      sectionClass: "#content section",
+      menuActiveTarget: "#sidebar a"
+    })
+  }
+</script>
+<style>
+  #sidebar a {
+    color: rgb(113 113 122);
+    transition: transform .05s linear;
+  }
+
+  #sidebar a.active {
+    color: rgb(67 56 202);
+    font-weight: 500;
+    transform: translateX(2.5rem);
+  }
+</style>
+
+<div class="relative flex flex-col w-full gap-20 pt-5 lg:flex-row lg:items-start">
+  <div class="relative lg:sticky flex flex-col items-start w-full gap-5 lg:top-[85px] lg:w-[47%]">
     <h1 class="text-4xl font-semibold">Sajidur Rahman</h1>
     <h2 class="text-xl font-medium">{gettext("Software developer student")}</h2>
     <p>{gettext("Passionnate about building accessible and performant web applications.")}</p>
-    <div class="relative w-full flex flex-wrap gap-5">
+    <div id="sidebar" class="flex-col items-start hidden gap-5 mt-10 lg:flex">
+      <a href="#about-me">
+        {gettext("About Me")}
+      </a>
+      <a href="#experience">{gettext("Experience")}</a>
+      <a href="#projects">{gettext("Projects")}</a>
+    </div>
+    <div class="relative flex flex-wrap w-full gap-5 lg:mt-10">
       {gettext("Find me on")}
       <a
         href="https://github.com/novaotp"
@@ -54,16 +90,83 @@
         </svg>
       </a>
     </div>
-  </section>
-  <section class="relative w-full flex flex-col gap-5">
-    <h2 class="font-medium text-lg mb-5">{gettext("About Me")}</h2>
-    <p>
-      {gettext(
-        "I'm a software developer student, currently studying at the EPTM of Sion, Switzerland."
-      )}
-    </p>
-    <p>
-      {gettext("In my free time, I like to cook and draw. I'm also keen on programming and OSS.")}
-    </p>
-  </section>
+  </div>
+  <div id="content" class="relative flex flex-col w-full gap-20 lg:w-[53%]">
+    <section id="about-me" class="relative flex flex-col w-full gap-5 scroll-mt-10">
+      <h2 class="mb-5 text-lg font-medium">{gettext("About Me")}</h2>
+      <p>
+        {gettext(
+          "I'm a software developer student, currently studying at the EPTM of Sion, Switzerland."
+        )}
+      </p>
+      <p>
+        {gettext(
+          "In my free time, I like to cook and draw. I'm also keen on programming and OSS."
+        )}
+      </p>
+    </section>
+    <section id="experience" class="relative flex flex-col w-full gap-4 scroll-mt-10">
+      <h2 class="mb-5 text-lg font-medium">
+        {gettext("Experience")}
+      </h2>
+      <.experience_card
+        tags={~w(Elixir Phoenix ExUnit TailwindCSS)}
+        periods={[{~D[2024-11-27], ~D[2025-03-07]}]}
+        show_months
+        href="https://www.avaulo.com"
+      >
+        {gettext("Internship - Avaulo SA")}
+        <:description>
+          {gettext(
+            "Created, tested and deployed a CI pipeline to deliver new releases easily. Worked on unit testing to ensure proper functioning of the source code. Helped developing ergonomic and responsive UI layouts and components."
+          )}
+        </:description>
+      </.experience_card>
+      <.experience_card
+        tags={~w(ThingsBoard Angular LoRa)}
+        periods={[{~D[2023-07-24], ~D[2023-08-18]}, {~D[2023-10-16], ~D[2023-10-31]}]}
+        show_months
+        href="https://www.altis.swiss"
+      >
+        {gettext("Summer Job - Altis")}
+        <:description>
+          {gettext(
+            "Creation of supervisions dedicated to the building team's activities. Display of real-time values acquired from LoRa sensors. Compilation of generic, usable documentation for IRIS digital platforms. Scripting and automation of mass data capture. Development of Angular widgets for the Thingsboard platform in coordination with external partners."
+          )}
+        </:description>
+        <:extra>
+          <ul class="ml-5 list-disc">
+            <li>
+              <a
+                href="https://github.com/novaotp/iris-energy-widget"
+                target="_blank"
+                class="text-sm text-indigo-700 underline"
+                title="See the widget's github repository (new page)"
+              >
+                ThingsBoard Widget for real-time energy consumption
+              </a>
+            </li>
+          </ul>
+        </:extra>
+      </.experience_card>
+    </section>
+    <section id="projects" class="relative flex flex-col w-full gap-4 scroll-mt-10">
+      <h2 class="mb-5 text-lg font-medium">
+        {gettext("Projects")}
+      </h2>
+      <.project_card
+        href="https://github.com/svelte-librarian/sv-use"
+        tags={~w(Svelte Typescript)}
+        image_path={~p"/images/sv-use.png"}
+        image_alt="SvelteUse's home page."
+      >
+        SvelteUse
+        <:description>
+          {gettext(
+            "A collection of Svelte 5 utilities, powered by runes. It provides a wide range of utilities for handling states, reactive bindings, and much more. It features interactive demos in the documentation."
+          )}
+        </:description>
+      </.project_card>
+    </section>
+  </div>
 </div>

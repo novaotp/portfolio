@@ -20,14 +20,8 @@ defmodule PortfolioWeb.Router do
     get "/blog/:id", BlogController, :show
 
     post "/locale", LocaleController, :update
-  end
 
-  live_session :default, on_mount: PortfolioWeb.Hooks.Locale do
-    scope "/", PortfolioWeb do
-      pipe_through :browser
-
-      live "/contact", ContactLive
-    end
+    live "/contact", ContactLive
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development

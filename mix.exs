@@ -80,7 +80,8 @@ defmodule Portfolio.MixProject do
         "tailwind portfolio --minify",
         "esbuild portfolio --minify",
         "phx.digest"
-      ]
+      ],
+      i18n: ["gettext.extract --merge"]
     ]
   end
 end
