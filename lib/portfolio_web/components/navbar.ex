@@ -95,9 +95,9 @@ defmodule PortfolioWeb.Components.NavBar do
           class="fixed top-0 left-0 z-10 flex-col items-start hidden w-full h-full gap-10 bg-white dark:bg-zinc-800"
         >
           <header class="relative flex items-center justify-between px-5 py-5 text-sm border-b sm:px-6 lg:px-8 border-zinc-200 dark:border-zinc-700">
-            <a href={~p"/"}>
+            <.link patch={~p"/"}>
               <img src={~p"/images/logo.svg"} width="36" />
-            </a>
+            </.link>
             
             <button phx-click={JS.hide(to: "#mobile-nav")}>
               <Heroicons.icon name="x-mark" type="outline" class="w-6 dark:text-zinc-100" />
@@ -106,8 +106,8 @@ defmodule PortfolioWeb.Components.NavBar do
           
           <div class="relative flex flex-col gap-10 mx-auto max-w-xs mt-5">
             <nav class="flex flex-col gap-5 p-5">
-              <a
-                href={~p"/"}
+              <.link
+                patch={~p"/"}
                 class={[
                   "text-xl",
                   if(@current_uri.path == "/",
@@ -117,10 +117,10 @@ defmodule PortfolioWeb.Components.NavBar do
                 ]}
               >
                 {gettext("Home")}
-              </a>
+              </.link>
               
-              <a
-                href={~p"/blog"}
+              <.link
+                patch={~p"/blog"}
                 class={[
                   "text-xl",
                   if(@current_uri.path == "/blog",
@@ -130,10 +130,10 @@ defmodule PortfolioWeb.Components.NavBar do
                 ]}
               >
                 {gettext("Blog")}
-              </a>
+              </.link>
               
-              <a
-                href={~p"/contact"}
+              <.link
+                patch={~p"/contact"}
                 class={[
                   "text-xl",
                   if(@current_uri.path == "/contact",
@@ -143,7 +143,7 @@ defmodule PortfolioWeb.Components.NavBar do
                 ]}
               >
                 {gettext("Contact")}
-              </a>
+              </.link>
             </nav>
             
             <div class="relative flex flex-col justify-center items-center gap-5">
