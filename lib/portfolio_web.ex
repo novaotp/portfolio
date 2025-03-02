@@ -56,6 +56,7 @@ defmodule PortfolioWeb do
         layout: {PortfolioWeb.Layouts, :app}
 
       on_mount(PortfolioWeb.Hooks.Locale)
+      on_mount(PortfolioWeb.Hooks.RequestUri)
 
       unquote(html_helpers())
     end

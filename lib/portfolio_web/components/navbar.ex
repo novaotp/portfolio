@@ -1,5 +1,9 @@
 defmodule PortfolioWeb.Components.NavBar do
-  use PortfolioWeb, :html
+  use Phoenix.Component
+  use Gettext, backend: PortfolioWeb.Gettext
+  use PortfolioWeb, :verified_routes
+
+  alias Phoenix.LiveView.JS
 
   def nav_bar(assigns) do
     ~H"""
@@ -9,44 +13,44 @@ defmodule PortfolioWeb.Components.NavBar do
       </a>
       
       <nav class="relative h-full flex-1 justify-center items-center hidden gap-2 px-5 text-base md:flex">
-        <a
-          href={~p"/"}
+        <.link
+          navigate={~p"/"}
           class={[
             "px-5 py-2",
-            if(@conn.request_path == "/",
+            if(@current_uri.path == "/",
               do: "text-indigo-700 dark:text-indigo-300 font-medium",
-              else: "text-zinc-600 dark:text-zinc-400"
+              else: "text-zinc-500 dark:text-zinc-400"
             )
           ]}
         >
           {gettext("Home")}
-        </a>
+        </.link>
         
-        <a
-          href={~p"/blog"}
+        <.link
+          navigate={~p"/blog"}
           class={[
             "px-5 py-2",
-            if(@conn.request_path == "/blog",
+            if(@current_uri.path == "/blog",
               do: "text-indigo-700 dark:text-indigo-300 font-medium",
-              else: "text-zinc-600 dark:text-zinc-400"
+              else: "text-zinc-500 dark:text-zinc-400"
             )
           ]}
         >
           {gettext("Blog")}
-        </a>
+        </.link>
         
-        <a
-          href={~p"/contact"}
+        <.link
+          navigate={~p"/contact"}
           class={[
             "px-5 py-2",
-            if(@conn.request_path == "/contact",
+            if(@current_uri.path == "/contact",
               do: "text-indigo-700 dark:text-indigo-300 font-medium",
-              else: "text-zinc-600 dark:text-zinc-400"
+              else: "text-zinc-500 dark:text-zinc-400"
             )
           ]}
         >
           {gettext("Contact")}
-        </a>
+        </.link>
       </nav>
       
       <div class="relative h-full flex-1 hidden md:flex justify-end items-center gap-5">
@@ -58,14 +62,14 @@ defmodule PortfolioWeb.Components.NavBar do
         >
           <input type="hidden" name="_csrf_token" value={Phoenix.Controller.get_csrf_token()} />
           <input type="hidden" name="locale" value={locale} />
-          <input type="hidden" name="to" value={@conn.request_path} />
+          <input type="hidden" name="to" value={@current_uri.path} />
           <button
             type="submit"
             class={[
               "uppercase font-medium",
               if(Gettext.get_locale(PortfolioWeb.Gettext) == locale,
                 do: "text-indigo-700 dark:text-indigo-300 font-medium",
-                else: "text-zinc-600 dark:text-zinc-400"
+                else: "text-zinc-500 dark:text-zinc-400"
               )
             ]}
           >
@@ -106,9 +110,9 @@ defmodule PortfolioWeb.Components.NavBar do
                 href={~p"/"}
                 class={[
                   "text-xl",
-                  if(@conn.request_path == "/",
+                  if(@current_uri.path == "/",
                     do: "text-indigo-700 dark:text-indigo-300 font-medium",
-                    else: "text-zinc-600 dark:text-zinc-400"
+                    else: "text-zinc-500 dark:text-zinc-400"
                   )
                 ]}
               >
@@ -119,9 +123,9 @@ defmodule PortfolioWeb.Components.NavBar do
                 href={~p"/blog"}
                 class={[
                   "text-xl",
-                  if(@conn.request_path == "/blog",
+                  if(@current_uri.path == "/blog",
                     do: "text-indigo-700 dark:text-indigo-300 font-medium",
-                    else: "text-zinc-600 dark:text-zinc-400"
+                    else: "text-zinc-500 dark:text-zinc-400"
                   )
                 ]}
               >
@@ -132,9 +136,9 @@ defmodule PortfolioWeb.Components.NavBar do
                 href={~p"/contact"}
                 class={[
                   "text-xl",
-                  if(@conn.request_path == "/contact",
+                  if(@current_uri.path == "/contact",
                     do: "text-indigo-700 dark:text-indigo-300 font-medium",
-                    else: "text-zinc-600 dark:text-zinc-400"
+                    else: "text-zinc-500 dark:text-zinc-400"
                   )
                 ]}
               >
@@ -153,14 +157,14 @@ defmodule PortfolioWeb.Components.NavBar do
                 >
                   <input type="hidden" name="_csrf_token" value={Phoenix.Controller.get_csrf_token()} />
                   <input type="hidden" name="locale" value={locale} />
-                  <input type="hidden" name="to" value={@conn.request_path} />
+                  <input type="hidden" name="to" value={@current_uri.path} />
                   <button
                     type="submit"
                     class={[
                       "uppercase font-medium",
                       if(Gettext.get_locale(PortfolioWeb.Gettext) == locale,
                         do: "text-indigo-700 dark:text-indigo-300 font-medium",
-                        else: "text-zinc-600 dark:text-zinc-400"
+                        else: "text-zinc-500 dark:text-zinc-400"
                       )
                     ]}
                   >

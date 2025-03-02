@@ -14,14 +14,16 @@ defmodule PortfolioWeb.Router do
   scope "/", PortfolioWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
-
-    get "/blog", BlogController, :home
-    get "/blog/:id", BlogController, :show
-
     post "/locale", LocaleController, :update
 
-    live "/contact", ContactLive
+    live_session :default, layout: {PortfolioWeb.Layouts, :live} do
+      live "/", HomeLive
+
+      live "/blog", BlogLive
+      live "/blog/:id", PostLive
+
+      live "/contact", ContactLive
+    end
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development

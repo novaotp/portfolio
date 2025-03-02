@@ -1,0 +1,25 @@
+<.nav_bar current_uri={@current_uri} />
+<main class="relative min-h-[calc(100dvh-145px)]">
+  <div class="min-h-[calc(100dvh-145px)] px-5 py-5 sm:px-6 sm:py-8 lg:px-8 h-full max-w-7xl mx-auto flex justify-center items-center flex-col">
+    {@inner_content}
+  </div>
+</main>
+
+<footer class="relative flex flex-col items-center justify-center w-full py-5 dark:text-zinc-100">
+  <p>
+    {gettext("Written in")}
+    <a
+      href="https://elixir-lang.org"
+      class="font-medium text-indigo-700 underline dark:text-indigo-300"
+    >
+      Elixir
+    </a>
+     {gettext("and")}
+    <a
+      href="https://v3.tailwindcss.com"
+      class="font-medium text-indigo-700 underline dark:text-indigo-300"
+    >
+      TailwindCSS
+    </a>
+  </p>
+</footer>

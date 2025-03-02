@@ -1,16 +1,16 @@
-defmodule PortfolioWeb.BlogHTML do
+defmodule PortfolioWeb.Components.Post do
   use PortfolioWeb, :html
 
   alias PortfolioWeb.Constants
 
-  embed_templates "blog_html/*"
-
   def post_card(assigns) do
     ~H"""
-    <.link href={~p"/blog/#{@post.id}"} class="gap-2 flex flex-col items-start py-5">
+    <.link patch={~p"/blog/#{@post.id}"} class="gap-2 flex flex-col items-start py-5">
       <.date post={@post} />
       <h2 class="text-xl dark:text-zinc-100">{@post.title}</h2>
+      
       <p class="text-zinc-500 dark:text-zinc-400 py-2">{@post.description}</p>
+      
       <div class="flex flex-wrap gap-2">
         <span
           :for={tag <- @post.tags}

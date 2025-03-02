@@ -1,14 +1,11 @@
-defmodule PortfolioWeb.PageHTML do
-  @moduledoc """
-  This module contains pages rendered by PageController.
-
-  See the `page_html` directory for all templates available.
-  """
-  use PortfolioWeb, :html
+defmodule PortfolioWeb.HomeLive do
+  use PortfolioWeb, :live_view
 
   alias PortfolioWeb.Constants
 
-  embed_templates "page_html/*"
+  def mount(_params, _session, socket) do
+    {:ok, socket}
+  end
 
   attr(:periods, :list,
     required: true,
@@ -29,6 +26,7 @@ defmodule PortfolioWeb.PageHTML do
       <time class="text-zinc-400 text-sm font-medium">
         {format_periods(@periods, @show_months)}
       </time>
+      
       <h3 class="font-medium dark:text-zinc-100">
         <a
           href={@href}
@@ -40,10 +38,13 @@ defmodule PortfolioWeb.PageHTML do
           <Heroicons.icon name="arrow-up-right" type="mini" class="size-5" />
         </a>
       </h3>
-      <p class="text-sm text-zinc-600 dark:text-zinc-400">{render_slot(@description)}</p>
+      
+      <p class="text-sm text-zinc-500 dark:text-zinc-400">{render_slot(@description)}</p>
+      
       <%= for extra <- @extra do %>
         {render_slot(extra)}
       <% end %>
+      
       <div class="flex flex-wrap gap-2 mt-2">
         <span
           :for={tag <- @tags}
@@ -104,7 +105,9 @@ defmodule PortfolioWeb.PageHTML do
             <Heroicons.icon name="arrow-up-right" type="mini" class="size-5" />
           </a>
         </h3>
+        
         <p class="text-sm text-zinc-400">{render_slot(@description)}</p>
+        
         <div class="flex flex-wrap gap-2 mt-2">
           <span
             :for={tag <- @tags}
