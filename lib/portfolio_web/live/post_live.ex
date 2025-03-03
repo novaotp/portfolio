@@ -2,7 +2,7 @@ defmodule PortfolioWeb.PostLive do
   use PortfolioWeb, :live_view
 
   alias Portfolio.Blog
-  import PortfolioWeb.Components.Post
+  import PortfolioWeb.Components.Domains.Post
 
   def mount(%{"id" => id}, _session, socket) do
     post = Blog.get_post_by_id!(Gettext.get_locale(PortfolioWeb.Gettext), id)

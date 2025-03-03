@@ -2,7 +2,7 @@ defmodule PortfolioWeb.BlogLive do
   use PortfolioWeb, :live_view
 
   alias Portfolio.Blog
-  import PortfolioWeb.Components.Post
+  import PortfolioWeb.Components.Domains.Post
 
   def mount(_params, _session, socket) do
     posts =

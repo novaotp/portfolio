@@ -1,4 +1,4 @@
-defmodule PortfolioWeb.Components.Post do
+defmodule PortfolioWeb.Components.Domains.Post do
   use PortfolioWeb, :html
 
   alias PortfolioWeb.Constants
