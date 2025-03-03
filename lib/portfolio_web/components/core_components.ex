@@ -377,7 +377,7 @@ defmodule PortfolioWeb.CoreComponents do
         id={@id}
         value={Phoenix.HTML.Form.normalize_value(@type, @value)}
         class={[
-          "w-full px-5 py-3 rounded-lg text-sm text-zinc-900 dark:bg-zinc-800 focus:ring-2 focus:ring-offset-2 sm:text-sm sm:leading-6",
+          "w-full px-5 py-3 rounded-lg text-sm text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100 focus:ring-2 focus:ring-offset-2 sm:text-sm sm:leading-6",
           @errors == [] &&
             "border-zinc-300 dark:border-zinc-700 focus:border-indigo-400 dark:focus:border-indigo-600",
           @errors != [] && "border-red-400 focus:border-red-400"
@@ -410,7 +410,7 @@ defmodule PortfolioWeb.CoreComponents do
 
   def error(assigns) do
     ~H"""
-    <p class="flex gap-3 mt-3 text-sm leading-6 text-rose-600">
+    <p class="flex gap-3 mt-3 text-sm leading-6 text-rose-600 dark:text-red-400">
       <.icon name="hero-exclamation-circle-mini" class="mt-0.5 h-5 w-5 flex-none" />
       {render_slot(@inner_block)}
     </p>
