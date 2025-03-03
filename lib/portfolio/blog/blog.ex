@@ -15,7 +15,6 @@ defmodule Portfolio.Blog do
     html_converter: Blog.MarkdownConverter,
     from: Application.app_dir(:portfolio, "priv/posts/**/*.md"),
     as: :posts,
-    earmark_options: [postprocessor: &Blog.Processor.process/1],
     highlighters: [:makeup_elixir, :makeup_erlang]
 
   @posts Enum.sort_by(@posts, & &1.date, {:desc, Date})
